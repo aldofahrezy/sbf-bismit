@@ -47,7 +47,7 @@ const TutorialDocsToc = ({ items }: { items: TocItem[] }) => {
             <a
               href={`#${id}`}
               className={clsx(
-                "block rounded px-2 py-1 hover:underline",
+                "block rounded px-2 py-1 hover:underline truncate",
                 active === id ? "bg-slate-200 text-slate-800" : "text-slate-600"
               )}
             >

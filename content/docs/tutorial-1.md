@@ -1,5 +1,5 @@
 ---
-title: Intro to Git
+title: Intro to HTML & CSS
 description: Basic intro
 ---
 

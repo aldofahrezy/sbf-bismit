@@ -9,6 +9,7 @@ import rehypePrism from "rehype-prism-plus";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation"; // 👈 import this
 import TutorialDocsToc from "@/modules/TutorialModule/components/TutorialDocsToc";
+import { default as CodeBlock } from "@/components/ui/codeblock";
 // import TutorialBreadcrumb from "@/modules/TutorialModule/components/TutorialBreadcrumb";
 
 // Pre-generate static routes
@@ -49,8 +50,11 @@ export default async function Page({ params }: { params: { slug: string } }) {
     <div className="mx-auto flex min-h-screen gap-8 px-4 py-8">
       <div className="grow">
         {/* <TutorialBreadcrumb /> */}
-        <article className="prose dark:prose-invert max-w-none">
+        <article className="prose dark:prose-invert max-w-none w-full">
           <ReactMarkdown
+            components={{
+              pre: (props) => <CodeBlock {...props} />,
+            }}
             remarkPlugins={[remarkGfm]}
             rehypePlugins={[
               rehypePrism,
